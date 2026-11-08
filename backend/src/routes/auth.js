@@ -15,7 +15,7 @@ const router = Router();
 // Authentication cookie configuration
 const cookieOptions = () => ({
   httpOnly: true,
-  secure: process.env.NODE_ENV === 'production',
+  secure: process.env.NODE_ENV === 'production' || process.env.VERCEL === '1',
   sameSite: process.env.COOKIE_SAME_SITE || 'lax',
   path: '/',
   maxAge: 8 * 60 * 60 * 1000
